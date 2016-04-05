@@ -1,0 +1,13 @@
+---
+# cloudlab playbook, for installing XOS on cloudlab
+
+- hosts: cloudlab
+
+  vars:
+    xos_repo_url: "https://github.com/zdw/xos"
+    xos_repo_dest: "~/xos"
+    xos_repo_branch: "HEAD"
+
+  roles:
+    - { role: common-prep, become: yes }
+    - xos-install
